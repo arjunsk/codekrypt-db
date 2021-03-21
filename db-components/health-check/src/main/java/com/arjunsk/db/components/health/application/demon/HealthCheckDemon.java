@@ -7,7 +7,8 @@ import java.net.InetAddress;
 @SuppressWarnings({"java:S2189", "InfiniteLoopStatement"})
 public class HealthCheckDemon implements Runnable {
 
-  private static final int TIMEOUT_MILLI = 1000;
+  private static final int TIMEOUT_MILLI = 1000; // 1 sec
+  private static final int HEATH_CHECK_PERIOD_MILLIS = 1000; // 1 sec
 
   private final AdminServer server = AdminServer.getInstance();
 
@@ -16,7 +17,7 @@ public class HealthCheckDemon implements Runnable {
   public void run() {
     while (true) {
       try {
-        sleep(1000); // sleep for 1 second
+        sleep(HEATH_CHECK_PERIOD_MILLIS); // sleep for 1 second
 
         // ping all nodes
         for (Node node : server.getNodes()) {
