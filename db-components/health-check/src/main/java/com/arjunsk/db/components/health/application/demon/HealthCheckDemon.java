@@ -1,11 +1,13 @@
 package com.arjunsk.db.components.health.application.demon;
 
-import com.arjunsk.db.components.health.application.domain.Node;
 import com.arjunsk.db.components.health.application.AdminServer;
+import com.arjunsk.db.components.health.application.domain.Node;
 import java.net.InetAddress;
 
 @SuppressWarnings({"java:S2189", "InfiniteLoopStatement"})
 public class HealthCheckDemon implements Runnable {
+
+  private static final int TIMEOUT_MILLI = 1000;
 
   private final AdminServer server = AdminServer.getInstance();
 
@@ -22,7 +24,7 @@ public class HealthCheckDemon implements Runnable {
           if (!node.id.equals(myHostname)) {
 
             InetAddress inet = InetAddress.getByName(node.name);
-            if (inet.isReachable(1000)) {
+            if (inet.isReachable(TIMEOUT_MILLI)) {
               System.out.println("Ping Node [id:" + node.id + "] ==> Node  Up!");
               server.nodeUp(node.id);
             } else {
