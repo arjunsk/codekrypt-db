@@ -8,7 +8,7 @@ public class ConcurrentHashMapDriver {
 
   public static void main(String[] args) {
 
-    // 1. Useful functions
+    // Eg 1. Useful functions
     ConcurrentMap<String, String> map = new ConcurrentHashMap<>();
     map.put("foo", "bar");
     map.put("han", "solo");
@@ -21,9 +21,11 @@ public class ConcurrentHashMapDriver {
     map.merge("foo", "boo", (oldVal, newVal) -> newVal + " was " + oldVal);
     System.out.println(map.get("foo")); // boo was foo
 
-    // 2. Parallelism within ConcurrentHashMap
+    // Eg 2. Parallelism within ConcurrentHashMap
     System.out.println(ForkJoinPool.getCommonPoolParallelism()); // 3
 
+    // We use concrete implementation ConcurrentHashMap instead of the interface ConcurrentMap, so
+    // we can access all public methods from this class
     ConcurrentHashMap<String, String> map2 = new ConcurrentHashMap<>();
     map2.put("foo", "bar");
     map2.put("han", "solo");
