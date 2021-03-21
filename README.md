@@ -9,4 +9,7 @@ This is my effort to learn `component` forming a database, one at a time.
 
 ### Health Check
 1. [NoSQL vClock Project](https://github.com/paulnguyen/nosql)
+2. [InetAddress](https://www.geeksforgeeks.org/networking-class-in-java/)
 
+### Lock
+1. [Locks Tutorial](https://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples/)
