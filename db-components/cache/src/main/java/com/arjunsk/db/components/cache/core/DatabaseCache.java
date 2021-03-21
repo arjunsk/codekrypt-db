@@ -1,7 +1,7 @@
 package com.arjunsk.db.components.cache.core;
 
-import com.arjunsk.db.components.cache.domain.Employee;
 import com.arjunsk.db.components.cache.support.MockDatabase;
+import com.arjunsk.db.components.cache.support.domain.Employee;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;

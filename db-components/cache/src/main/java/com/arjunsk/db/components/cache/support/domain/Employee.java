@@ -1,4 +1,4 @@
-package com.arjunsk.db.components.cache.domain;
+package com.arjunsk.db.components.cache.support.domain;
 
 import com.google.common.base.MoreObjects;
 

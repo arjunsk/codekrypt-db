@@ -1,6 +1,6 @@
 package com.arjunsk.db.components.cache.support;
 
-import com.arjunsk.db.components.cache.domain.Employee;
+import com.arjunsk.db.components.cache.support.domain.Employee;
 import java.util.HashMap;
 import java.util.Map;
 
