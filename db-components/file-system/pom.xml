@@ -12,5 +12,16 @@
 
   <artifactId>file-system</artifactId>
 
+  <dependencies>
+
+    <!-- Used for File Utils-->
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${guava.version}</version>
+    </dependency>
+
+  </dependencies>
+
 
 </project>
