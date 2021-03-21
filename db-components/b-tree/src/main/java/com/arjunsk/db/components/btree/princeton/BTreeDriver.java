@@ -9,6 +9,7 @@ public class BTreeDriver {
     BTree<String, String> st = new BTree<>();
 
     st.put("www.cs.princeton.edu", "128.112.136.12");
+    st.put("www.cs.princeton.edu", "128.112.136.13");
     st.put("www.princeton.edu", "128.112.128.15");
     st.put("www.yale.edu", "130.132.143.21");
     st.put("www.simpsons.com", "209.052.165.60");
