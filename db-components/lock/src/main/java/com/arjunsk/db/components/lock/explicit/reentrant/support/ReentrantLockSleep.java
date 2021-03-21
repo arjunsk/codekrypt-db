@@ -1,4 +1,4 @@
-package com.arjunsk.db.components.lock.implicit.reentrant.support;
+package com.arjunsk.db.components.lock.explicit.reentrant.support;
 
 import static com.arjunsk.db.components.utils.ConcurrentUtils.sleep;
 import static com.arjunsk.db.components.utils.ConcurrentUtils.stop;

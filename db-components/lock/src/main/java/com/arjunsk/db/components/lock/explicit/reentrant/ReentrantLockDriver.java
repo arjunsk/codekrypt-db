@@ -1,6 +1,6 @@
-package com.arjunsk.db.components.lock.implicit.reentrant;
+package com.arjunsk.db.components.lock.explicit.reentrant;
 
-import com.arjunsk.db.components.lock.implicit.reentrant.support.ReentrantLockSleep;
+import com.arjunsk.db.components.lock.explicit.reentrant.support.ReentrantLockSleep;
 
 /**
  * @see <a

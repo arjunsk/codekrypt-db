@@ -1,4 +1,4 @@
-package com.arjunsk.db.components.lock.explicit.support;
+package com.arjunsk.db.components.lock.implicit.support;
 
 import static com.arjunsk.db.components.utils.ConcurrentUtils.stop;
 

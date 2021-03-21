@@ -1,6 +1,6 @@
-package com.arjunsk.db.components.lock.implicit.readwrite;
+package com.arjunsk.db.components.lock.explicit.readwrite;
 
-import com.arjunsk.db.components.lock.implicit.readwrite.support.ReadWriteLockDnsSample;
+import com.arjunsk.db.components.lock.explicit.readwrite.support.ReadWriteLockDnsSample;
 
 /**
  * @see <a

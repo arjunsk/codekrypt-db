@@ -1,4 +1,4 @@
-package com.arjunsk.db.components.lock.implicit.readwrite.support;
+package com.arjunsk.db.components.lock.explicit.readwrite.support;
 
 import static com.arjunsk.db.components.utils.ConcurrentUtils.sleep;
 import static com.arjunsk.db.components.utils.ConcurrentUtils.stop;

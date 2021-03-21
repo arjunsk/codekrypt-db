@@ -1,6 +1,6 @@
-package com.arjunsk.db.components.lock.explicit;
+package com.arjunsk.db.components.lock.implicit;
 
-import com.arjunsk.db.components.lock.explicit.support.SynchronizedCounter;
+import com.arjunsk.db.components.lock.implicit.support.SynchronizedCounter;
 
 public class SynchronizedDriver {
 
