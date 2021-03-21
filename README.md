@@ -12,4 +12,4 @@ This is my effort to learn `component` forming a database, one at a time.
 2. [InetAddress](https://www.geeksforgeeks.org/networking-class-in-java/)
 
 ### Lock
-1. [Locks Tutorial](https://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples/)
+1. [Locks Tutorial: Winterbe](https://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples/)
