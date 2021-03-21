@@ -22,3 +22,6 @@ This is my effort to learn `component` forming a database, one at a time.
 
 ### Compression Snappy
 1. [Snappy for Java](https://xerial.org/snappy-java/)
+
+### File System
+1. [RandomAccess](https://www.javatpoint.com/java-randomaccessfile-class)

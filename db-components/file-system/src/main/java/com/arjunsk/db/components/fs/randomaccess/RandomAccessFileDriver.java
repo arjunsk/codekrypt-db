@@ -11,7 +11,7 @@ public class RandomAccessFileDriver {
 
   public static void main(String[] args) throws URISyntaxException {
 
-    // This file will be read and written in /target folder and not in /src.
+    // This file will be read and written in /target/classes/input.txt folder and not in /src.
     URL resourceUrl = RandomAccessFileDriver.class.getClassLoader().getResource("input.txt");
     String filePath = Paths.get(resourceUrl.toURI()).toFile().getAbsolutePath();
 
