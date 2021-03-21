@@ -1,4 +1,4 @@
-package com.arjunsk.db.components.fs;
+package com.arjunsk.db.components.fs.folder;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
@@ -6,7 +6,7 @@ import com.google.common.collect.ImmutableList;
 import java.io.File;
 import java.io.IOException;
 
-public final class FileUtils {
+public final class FolderUtils {
 
   public static boolean isSymbolicLink(File file) {
     try {
