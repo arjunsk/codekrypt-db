@@ -13,6 +13,7 @@ This is my effort to learn `component` forming a database, one at a time.
 
 ### Lock
 1. [Locks Tutorial: Winterbe](https://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples/)
+2. [File Lock](https://www.tutorialspoint.com/java_nio/java_nio_filelock.htm)
 
 ### DB API
 1. [LevelDB](https://github.com/dain/leveldb)
@@ -25,3 +26,6 @@ This is my effort to learn `component` forming a database, one at a time.
 
 ### File System
 1. [RandomAccess](https://www.javatpoint.com/java-randomaccessfile-class)
+
+### JDBC
+1. [Stackoverflow QA](https://stackoverflow.com/questions/28114725/writing-a-custom-jdbc-driver-in-java-a-very-basic-one)
