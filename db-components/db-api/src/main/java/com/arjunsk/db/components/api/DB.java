@@ -13,6 +13,35 @@ public interface DB extends Iterable<Map.Entry<byte[], byte[]>>, Closeable {
   void delete(byte[] key) throws DBException;
 
   /**
+   * ### ITERATOR ####
+   *
+   * <p>Usage 1
+   *
+   * <pre>
+   *   DBIterator iterator = db.iterator();
+   *   iterator.seek(bytes("key")); // starts from the specified key
+   *   iterator.seekToFirst(); // starts from the first key
+   *   iterator.seekToLast(); // starts from the last key
+   * </pre>
+   *
+   * <p>Usage 2
+   *
+   * <pre>
+   * while (iterator.hasNext()){
+   *     byte[] key = iterator.peekNext().getKey();
+   *     byte[] value = iterator.peekNext().getValue();
+   *
+   *     // whatever you want to do
+   *     iterator.next();
+   * }
+   * iterator.close();
+   *
+   * </pre>
+   */
+  @Override
+  DBIterator iterator();
+
+  /**
    * ### BATCH SUPPORT ###
    *
    * <p>Usage:
