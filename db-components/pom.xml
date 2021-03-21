@@ -12,6 +12,7 @@
     <module>db-api</module>
     <module>cache</module>
     <module>compression-snappy</module>
+    <module>jdbc</module>
   </modules>
 
   <parent>
