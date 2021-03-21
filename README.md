@@ -16,3 +16,9 @@ This is my effort to learn `component` forming a database, one at a time.
 
 ### DB API
 1. [LevelDB](https://github.com/dain/leveldb)
+
+### Cache
+1. [Tutorial Point](https://www.tutorialspoint.com/guava/guava_caching_utilities.htm)
+
+### Compression Snappy
+1. [Snappy for Java](https://xerial.org/snappy-java/)

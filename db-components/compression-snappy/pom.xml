@@ -12,5 +12,14 @@
 
   <artifactId>compression-snappy</artifactId>
 
+  <dependencies>
+
+    <dependency>
+      <groupId>org.xerial.snappy</groupId>
+      <artifactId>snappy-java</artifactId>
+      <version>${snappy-java.version}</version>
+    </dependency>
+
+  </dependencies>
 
 </project>
