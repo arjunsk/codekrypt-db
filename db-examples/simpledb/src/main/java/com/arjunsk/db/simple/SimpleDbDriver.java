@@ -8,16 +8,19 @@ import com.arjunsk.db.simple.io.tuple.Tuple;
 import com.arjunsk.db.simple.io.tuple.desc.TupleDesc;
 import com.arjunsk.db.simple.io.tuple.fileds.Type;
 import java.io.File;
+import java.io.IOException;
 
 public class SimpleDbDriver {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
 
     Type[] types = new Type[] {Type.INT_TYPE, Type.INT_TYPE, Type.INT_TYPE};
     String[] names = new String[] {"field0", "field1", "field2"};
     TupleDesc descriptor = new TupleDesc(types, names);
 
-    HeapFile testTable = new HeapFile(new File("some_data_file.data"), descriptor);
+    ClassLoader loader = Thread.currentThread().getContextClassLoader();
+    File file = new File(loader.getResource("sample1_table.dat").getFile());
+    HeapFile testTable = new HeapFile(file, descriptor);
 
     Database.getCatalog().addTable(testTable, "test");
 

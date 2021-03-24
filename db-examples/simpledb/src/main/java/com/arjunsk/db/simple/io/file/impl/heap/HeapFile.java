@@ -37,7 +37,7 @@ public class HeapFile implements DBFile {
     Page page = null;
     byte[] data = new byte[BufferPool.PAGE_SIZE];
 
-    try (RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r")) {
+    try (RandomAccessFile randomAccessFile = new RandomAccessFile(getFile(), "r")) {
       int pos = pageId.pageNumber() * BufferPool.PAGE_SIZE;
       randomAccessFile.seek(pos);
       randomAccessFile.read(data, 0, data.length);
@@ -46,6 +46,10 @@ public class HeapFile implements DBFile {
       e.printStackTrace();
     }
     return page;
+  }
+
+  private File getFile() {
+    return file;
   }
 
   @Override

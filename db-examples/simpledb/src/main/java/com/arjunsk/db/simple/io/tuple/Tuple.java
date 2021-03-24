@@ -31,4 +31,16 @@ public class Tuple {
   private boolean isValidIndex(int index) {
     return index >= 0 && index < fields.length;
   }
+
+  public String toString() {
+    StringBuilder rowString = new StringBuilder();
+    for (int i = 0; i < fields.length; i++) {
+      if (i == fields.length - 1) {
+        rowString.append(fields[i].toString()).append("\n");
+      } else {
+        rowString.append(fields[i].toString()).append("\t");
+      }
+    }
+    return rowString.toString();
+  }
 }
