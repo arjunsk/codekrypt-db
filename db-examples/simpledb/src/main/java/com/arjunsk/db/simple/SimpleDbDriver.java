@@ -22,7 +22,7 @@ public class SimpleDbDriver {
     File file = new File(loader.getResource("sample1_table.dat").getFile());
     HeapFile testTable = new HeapFile(file, descriptor);
 
-    Database.getCatalog().addTable(testTable, "test");
+    Database.getCatalog().addTable(testTable, "sample1");
 
     TransactionId transactionId = new TransactionId();
     SeqScan fileIterator = new SeqScan(transactionId, testTable.getId());
