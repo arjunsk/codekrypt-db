@@ -6,15 +6,11 @@
 
   <parent>
     <groupId>com.arjunsk</groupId>
-    <artifactId>codekrypt-db</artifactId>
+    <artifactId>db-examples</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>db-examples</artifactId>
-  <packaging>pom</packaging>
+  <artifactId>simpledb</artifactId>
 
-  <modules>
-    <module>simpledb</module>
-  </modules>
 
 </project>

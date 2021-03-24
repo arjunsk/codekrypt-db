@@ -6,11 +6,22 @@
 
   <parent>
     <groupId>com.arjunsk</groupId>
-    <artifactId>db-examples</artifactId>
+    <artifactId>db-components</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>ck-db</artifactId>
+  <artifactId>files</artifactId>
+
+  <dependencies>
+
+    <!-- Used for File Utils-->
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${guava.version}</version>
+    </dependency>
+
+  </dependencies>
 
 
 </project>
