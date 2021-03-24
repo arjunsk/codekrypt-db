@@ -10,7 +10,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>ck-db</artifactId>
+  <artifactId>simpledb</artifactId>
 
 
 </project>
