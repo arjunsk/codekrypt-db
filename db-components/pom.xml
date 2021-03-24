@@ -8,12 +8,11 @@
     <module>health-check</module>
     <module>sql-parser</module>
     <module>lock</module>
-    <module>files</module>
+    <module>file-system</module>
     <module>db-api</module>
     <module>cache</module>
     <module>compression-snappy</module>
     <module>jdbc</module>
-    <module>file-system</module>
   </modules>
 
   <parent>
