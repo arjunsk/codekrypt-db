@@ -5,7 +5,7 @@ import com.arjunsk.db.simple.db.Database;
 import com.arjunsk.db.simple.db.Permissions;
 import com.arjunsk.db.simple.exception.DbException;
 import com.arjunsk.db.simple.exception.TransactionAbortedException;
-import com.arjunsk.db.simple.io.file.DBFile;
+import com.arjunsk.db.simple.io.file.DbFile;
 import com.arjunsk.db.simple.io.file.DbFileIterator;
 import com.arjunsk.db.simple.io.id.TransactionId;
 import com.arjunsk.db.simple.io.page.Page;
@@ -20,7 +20,7 @@ import java.io.RandomAccessFile;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class HeapFile implements DBFile {
+public class HeapFile implements DbFile {
 
   private final int numPage;
   private File file;

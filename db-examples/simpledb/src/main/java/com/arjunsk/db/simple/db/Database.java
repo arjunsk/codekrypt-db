@@ -2,9 +2,9 @@ package com.arjunsk.db.simple.db;
 
 public class Database {
   private static final Database instance = new Database();
-  private final Catalog catalog;
 
-  private BufferPool bufferPool;
+  private final Catalog catalog;
+  private final BufferPool bufferPool;
 
   private Database() {
     this.catalog = new Catalog();
