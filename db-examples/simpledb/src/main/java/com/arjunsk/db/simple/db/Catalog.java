@@ -7,18 +7,26 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
+/**
+ * Each table will have a separate file.
+ *
+ * <p>Catalog manages the tables inside a Database.
+ */
 public class Catalog {
 
+  // Maps TableID to DbFile
   private final Map<Integer, DbFile> id2File;
+
+  // Maps TableID to TableName
   private final Map<Integer, String> id2Name;
-  private final HashMap<Integer, String> id2PrimaryKey;
-  private final HashMap<String, Integer> name2Id;
+
+  // Maps TableID to Table's Primary Key
+  private final Map<Integer, String> id2PrimaryKey;
 
   public Catalog() {
     this.id2File = new HashMap<>();
     this.id2Name = new HashMap<>();
     this.id2PrimaryKey = new HashMap<>();
-    this.name2Id = new HashMap<>();
   }
 
   public void addTable(DbFile file, String name, String primaryKey) {
@@ -29,21 +37,13 @@ public class Catalog {
 
     Integer tableId = file.getId();
 
-    if (name2Id.containsKey(name)) {
-      int id = name2Id.get(name);
-      id2File.remove(id);
-      id2Name.remove(id);
-      id2PrimaryKey.remove(id);
-      name2Id.remove(name);
-    }
     id2File.put(tableId, file);
     id2Name.put(tableId, name);
     id2PrimaryKey.put(tableId, primaryKey);
-    name2Id.put(name, tableId);
   }
 
   public void addTable(DbFile file, String name) {
-    addTable(file, name, "");
+    addTable(file, name, "_id");
   }
 
   public void addTable(DbFile file) {
@@ -51,20 +51,20 @@ public class Catalog {
   }
 
   public DbFile getDbFile(Integer tableId) {
-    if (!isIdValid(tableId, id2File)) {
+    if (isTableNotRegistered(tableId, id2File)) {
       throw new NoSuchElementException();
     }
     return id2File.get(tableId);
   }
 
   public TupleDesc getTupleDesc(int tableId) throws NoSuchElementException {
-    if (!isIdValid(tableId, id2File)) {
+    if (isTableNotRegistered(tableId, id2File)) {
       throw new NoSuchElementException();
     }
     return id2File.get(tableId).getTupleDesc();
   }
 
-  private boolean isIdValid(int id, Map<?, ?> map) {
-    return map.containsKey(id);
+  private boolean isTableNotRegistered(int id, Map<?, ?> map) {
+    return !map.containsKey(id);
   }
 }

@@ -2,17 +2,24 @@ package com.arjunsk.db.simple.io.page.impl.heap;
 
 import com.arjunsk.db.simple.io.page.PageId;
 
+/** Unique identifier for HeapPage objects. */
 public class HeapPageId implements PageId {
 
   private final int tableId;
 
-  private final int pageNum;
+  private final int pageNumber;
 
+  /** Constructor. Create a page id structure for a specific page of a specific table. */
   public HeapPageId(int tableId, int pgNo) {
     this.tableId = tableId;
-    this.pageNum = pgNo;
+    this.pageNumber = pgNo;
   }
 
+  /**
+   * Return a representation of this object as an array of integers, for writing to disk. Size of
+   * returned array must contain number of integers that corresponds to number of args to one of the
+   * constructors.
+   */
   @Override
   public int[] serialize() {
     int[] data = new int[2];
@@ -25,7 +32,7 @@ public class HeapPageId implements PageId {
 
   @Override
   public int pageNumber() {
-    return 0;
+    return pageNumber;
   }
 
   public int getTableId() {
@@ -34,7 +41,7 @@ public class HeapPageId implements PageId {
 
   @Override
   public int hashCode() {
-    return 31 * tableId + pageNum;
+    return 31 * tableId + pageNumber;
   }
 
   @Override
@@ -44,7 +51,7 @@ public class HeapPageId implements PageId {
     }
     if (o instanceof PageId) {
       PageId another = (PageId) o;
-      return this.pageNum == another.pageNumber() && this.tableId == another.getTableId();
+      return this.pageNumber == another.pageNumber() && this.tableId == another.getTableId();
     }
     return false;
   }

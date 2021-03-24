@@ -7,9 +7,9 @@ public class TupleDescItem implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  private Type fieldType;
+  private final Type fieldType;
 
-  private String fieldName;
+  private final String fieldName;
 
   public TupleDescItem(Type fieldType, String fieldName) {
     this.fieldType = fieldType;

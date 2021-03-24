@@ -2,7 +2,7 @@ package com.arjunsk.db.simple.io.file.impl.heap;
 
 import com.arjunsk.db.simple.db.BufferPool;
 import com.arjunsk.db.simple.db.Database;
-import com.arjunsk.db.simple.db.Permissions;
+import com.arjunsk.db.simple.db.Permission;
 import com.arjunsk.db.simple.exception.DbException;
 import com.arjunsk.db.simple.exception.TransactionAbortedException;
 import com.arjunsk.db.simple.io.file.DbFile;
@@ -17,21 +17,33 @@ import com.arjunsk.db.simple.io.tuple.desc.TupleDesc;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * HeapFile is an implementation of a DbFile that stores a collection of tuples in no particular
+ * order. Tuples are stored on pages, each of which is a fixed size, and the file is simply a
+ * collection of those pages. HeapFile works closely with HeapPage. The format of HeapPages is
+ * described in the HeapPage constructor.
+ */
 public class HeapFile implements DbFile {
 
-  private final int numPage;
-  private File file;
-  private TupleDesc tupleDesc;
+  private final int numberOfPages;
+  private final File file;
+  private final TupleDesc tupleDesc;
 
   public HeapFile(File file, TupleDesc tupleDesc) {
     this.file = file;
     this.tupleDesc = tupleDesc;
-    this.numPage = (int) (file.length() / BufferPool.PAGE_SIZE);
+    this.numberOfPages = (int) (file.length() / BufferPool.PAGE_SIZE);
   }
 
+  /**
+   * Read a page from the disk according to the PageId. Note that this method should only be called
+   * directly in the BufferPool class. Other places where the page is needed, need to be accessed
+   * through the BufferPool, so as to realize the caching function.
+   */
   @Override
   public Page readPage(PageId pageId) throws IllegalArgumentException {
     Page page = null;
@@ -56,12 +68,20 @@ public class HeapFile implements DbFile {
   public void writePage(Page p) throws IOException {}
 
   @Override
-  public DbFileIterator iterator(TransactionId tid) {
-    return new HeapFileIterator(tid);
+  public ArrayList<Page> insertTuple(TransactionId transactionId, Tuple tuple)
+      throws DbException, IOException, TransactionAbortedException {
+    return null;
   }
 
-  public int getId() {
-    return file.getAbsoluteFile().hashCode();
+  @Override
+  public Page deleteTuple(TransactionId tid, Tuple t)
+      throws DbException, TransactionAbortedException {
+    return null;
+  }
+
+  @Override
+  public DbFileIterator iterator(TransactionId tid) {
+    return new HeapFileIterator(tid);
   }
 
   @Override
@@ -69,8 +89,13 @@ public class HeapFile implements DbFile {
     return this.tupleDesc;
   }
 
+  public int getId() {
+    return file.getAbsoluteFile().hashCode();
+  }
+
+  /** Returns the number of pages in this HeapFile. */
   public int numPages() {
-    return numPage;
+    return numberOfPages;
   }
 
   private class HeapFileIterator implements DbFileIterator {
@@ -87,6 +112,7 @@ public class HeapFile implements DbFile {
     public void open() throws DbException, TransactionAbortedException {
       pagePos = 0;
       HeapPageId pid = new HeapPageId(getId(), pagePos);
+      // Load the tuples of the first page
       tuplesInPage = getTuplesInPage(pid);
     }
 
@@ -126,9 +152,11 @@ public class HeapFile implements DbFile {
       tuplesInPage = null;
     }
 
-    public Iterator<Tuple> getTuplesInPage(HeapPageId pid) throws DbException {
+    public Iterator<Tuple> getTuplesInPage(HeapPageId pageId) throws DbException {
+      // You can't use the readPage method of HeapFile directly, but get the page through
+      // BufferPool.
       HeapPage page =
-          (HeapPage) Database.getBufferPool().getPage(transactionId, pid, Permissions.READ_ONLY);
+          (HeapPage) Database.getBufferPool().getPage(transactionId, pageId, Permission.READ_ONLY);
       return page.iterator();
     }
   }

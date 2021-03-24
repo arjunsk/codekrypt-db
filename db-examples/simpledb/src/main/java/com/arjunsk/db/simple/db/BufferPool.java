@@ -8,7 +8,12 @@ import com.arjunsk.db.simple.io.page.PageId;
 import com.arjunsk.db.simple.io.page.impl.heap.HeapPage;
 import java.util.HashMap;
 
+/**
+ * BufferPool manages the reading and writing of pages into memory from disk. Access methods call
+ * into it to retrieve pages, and it fetches pages from the appropriate location.
+ */
 public class BufferPool {
+
   public static final int PAGE_SIZE = 4096;
   public static final int DEFAULT_PAGES = 50;
 
@@ -20,16 +25,15 @@ public class BufferPool {
     pid2pages = new HashMap<>(pagesNum);
   }
 
-  public void transactionComplete(TransactionId tid) {}
+  public Page getPage(TransactionId transactionId, PageId pageId, Permission permission)
+      throws DbException {
 
-  public Page getPage(TransactionId tid, PageId pid, Permissions perm) throws DbException {
-
-    if (pid2pages.containsKey(pid)) {
-      return pid2pages.get(pid);
+    if (pid2pages.containsKey(pageId)) {
+      return pid2pages.get(pageId);
     } else {
-      HeapFile table = (HeapFile) Database.getCatalog().getDbFile(pid.getTableId());
-      HeapPage newPage = (HeapPage) table.readPage(pid);
-      addNewPage(pid, newPage);
+      HeapFile table = (HeapFile) Database.getCatalog().getDbFile(pageId.getTableId());
+      HeapPage newPage = (HeapPage) table.readPage(pageId);
+      addNewPage(pageId, newPage);
       return newPage;
     }
   }
@@ -39,5 +43,9 @@ public class BufferPool {
     if (pid2pages.size() > pagesNum) {
       // TODO: Implement
     }
+  }
+
+  public void transactionComplete(TransactionId tid) {
+    // TODO: Implement
   }
 }

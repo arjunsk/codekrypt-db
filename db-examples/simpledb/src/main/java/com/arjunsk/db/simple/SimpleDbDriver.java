@@ -8,11 +8,10 @@ import com.arjunsk.db.simple.io.tuple.Tuple;
 import com.arjunsk.db.simple.io.tuple.desc.TupleDesc;
 import com.arjunsk.db.simple.io.tuple.fileds.Type;
 import java.io.File;
-import java.io.IOException;
 
 public class SimpleDbDriver {
 
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) {
 
     Type[] types = new Type[] {Type.INT_TYPE, Type.INT_TYPE, Type.INT_TYPE};
     String[] names = new String[] {"field0", "field1", "field2"};

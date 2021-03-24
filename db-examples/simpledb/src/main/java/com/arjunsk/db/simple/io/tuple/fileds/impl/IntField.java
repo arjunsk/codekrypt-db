@@ -5,6 +5,7 @@ import com.arjunsk.db.simple.io.tuple.fileds.Type;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
+/** Instance of Field that stores a single integer. */
 public class IntField implements Field {
 
   private final int value;

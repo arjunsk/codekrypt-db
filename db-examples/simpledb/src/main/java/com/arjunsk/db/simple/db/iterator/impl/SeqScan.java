@@ -10,10 +10,14 @@ import com.arjunsk.db.simple.io.tuple.Tuple;
 import com.arjunsk.db.simple.io.tuple.desc.TupleDesc;
 import java.util.NoSuchElementException;
 
+/**
+ * SeqScan is an implementation of a sequential scan access method that reads each tuple of a table
+ * in no particular order (e.g., as they are laid out on disk).
+ */
 public class SeqScan implements DbIterator {
 
-  private TransactionId transactionId;
-  private int tableId;
+  private final TransactionId transactionId;
+  private final int tableId;
   private DbFileIterator dbFileIterator;
 
   public SeqScan(TransactionId transactionId, int tableId) {

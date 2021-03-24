@@ -5,8 +5,11 @@ import com.arjunsk.db.simple.io.tuple.fileds.Type;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
+/** Instance of Field that stores a single String of a fixed length. */
 public class StringField implements Field {
+
   private final String value;
+
   private final int maxSize;
 
   public StringField(String stringValue, int maxSize) {

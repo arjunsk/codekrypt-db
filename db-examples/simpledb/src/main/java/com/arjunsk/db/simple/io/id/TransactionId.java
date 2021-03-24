@@ -3,6 +3,7 @@ package com.arjunsk.db.simple.io.id;
 import java.io.Serializable;
 import java.util.concurrent.atomic.AtomicLong;
 
+/** TransactionId is a class that contains the identifier of a transaction. */
 public class TransactionId implements Serializable {
 
   static AtomicLong counter = new AtomicLong(0);

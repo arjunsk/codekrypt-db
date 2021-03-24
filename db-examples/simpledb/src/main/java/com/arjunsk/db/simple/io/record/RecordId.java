@@ -3,6 +3,7 @@ package com.arjunsk.db.simple.io.record;
 import com.arjunsk.db.simple.io.page.PageId;
 import java.io.Serializable;
 
+/** A RecordId is a reference to a specific tuple on a specific page of a specific table. */
 public class RecordId implements Serializable {
 
   private static final long serialVersionUID = 1L;
@@ -11,8 +12,14 @@ public class RecordId implements Serializable {
 
   private final int tupleNumber;
 
-  public RecordId(PageId pid, int tupleNumber) {
-    pageId = pid;
+  /**
+   * Creates a new RecordId referring to the specified PageId and tuple number.
+   *
+   * @param pageId the pageId of the page on which the tuple resides
+   * @param tupleNumber the tuple number within the page.
+   */
+  public RecordId(PageId pageId, int tupleNumber) {
+    this.pageId = pageId;
     this.tupleNumber = tupleNumber;
   }
 

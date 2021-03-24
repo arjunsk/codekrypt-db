@@ -7,6 +7,7 @@ import com.arjunsk.db.simple.io.tuple.Tuple;
 import java.util.NoSuchElementException;
 
 public abstract class Operator implements DbIterator {
+
   private static final long serialVersionUID = 1L;
   private Tuple next = null;
   private boolean open = false;

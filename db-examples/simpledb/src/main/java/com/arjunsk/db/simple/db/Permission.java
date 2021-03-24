@@ -1,12 +1,12 @@
 package com.arjunsk.db.simple.db;
 
-public class Permissions {
-  public static final Permissions READ_ONLY = new Permissions(0);
-  public static final Permissions READ_WRITE = new Permissions(1);
+public class Permission {
+  public static final Permission READ_ONLY = new Permission(0);
+  public static final Permission READ_WRITE = new Permission(1);
 
   int permLevel;
 
-  private Permissions(int permLevel) {
+  private Permission(int permLevel) {
     this.permLevel = permLevel;
   }
 

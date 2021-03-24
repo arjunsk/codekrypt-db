@@ -6,6 +6,7 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.text.ParseException;
 
+/** Class representing a type in SimpleDB. */
 public enum Type {
   INT_TYPE() {
     @Override
@@ -44,7 +45,14 @@ public enum Type {
 
   public static final int STRING_LEN = 128;
 
+  /** @return the number of bytes required to store a field of this type. */
   public abstract int getLen();
 
+  /**
+   * @param dis The input stream to read from
+   * @return a Field object of the same type as this object that has contents read from the
+   *     specified DataInputStream.
+   * @throws ParseException if the data read from the input stream is not of the appropriate type.
+   */
   public abstract Field parse(DataInputStream dis) throws ParseException;
 }
