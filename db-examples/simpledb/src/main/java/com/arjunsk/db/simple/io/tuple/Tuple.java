@@ -2,7 +2,7 @@ package com.arjunsk.db.simple.io.tuple;
 
 import com.arjunsk.db.simple.io.record.RecordId;
 import com.arjunsk.db.simple.io.tuple.desc.TupleDesc;
-import com.arjunsk.db.simple.io.tuple.fileds.Field;
+import com.arjunsk.db.simple.io.fileds.Field;
 import java.io.Serializable;
 
 /**

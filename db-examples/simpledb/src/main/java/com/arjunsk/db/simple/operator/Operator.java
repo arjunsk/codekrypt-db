@@ -1,6 +1,5 @@
 package com.arjunsk.db.simple.operator;
 
-import com.arjunsk.db.simple.db.iterator.DbIterator;
 import com.arjunsk.db.simple.exception.DbException;
 import com.arjunsk.db.simple.exception.TransactionAbortedException;
 import com.arjunsk.db.simple.io.tuple.Tuple;
