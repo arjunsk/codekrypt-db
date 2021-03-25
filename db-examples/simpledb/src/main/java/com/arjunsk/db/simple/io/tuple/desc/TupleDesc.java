@@ -1,6 +1,6 @@
 package com.arjunsk.db.simple.io.tuple.desc;
 
-import com.arjunsk.db.simple.io.tuple.fileds.Type;
+import com.arjunsk.db.simple.io.fileds.Type;
 import java.io.Serializable;
 import java.util.NoSuchElementException;
 /** TupleDesc describes the schema of a tuple. */
