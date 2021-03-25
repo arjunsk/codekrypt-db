@@ -6,7 +6,7 @@ import com.arjunsk.db.simple.io.id.TransactionId;
 import com.arjunsk.db.simple.io.tuple.Tuple;
 import com.arjunsk.db.simple.io.tuple.desc.TupleDesc;
 import com.arjunsk.db.simple.io.fileds.Type;
-import com.arjunsk.db.simple.operator.impl.SeqScan;
+import com.arjunsk.db.simple.operator.SeqScan;
 import java.io.File;
 
 public class SimpleDbDriver {

@@ -1,4 +1,4 @@
-package com.arjunsk.db.simple.operator.impl;
+package com.arjunsk.db.simple.operator;
 
 import com.arjunsk.db.simple.db.Database;
 import com.arjunsk.db.simple.operator.DbIterator;
