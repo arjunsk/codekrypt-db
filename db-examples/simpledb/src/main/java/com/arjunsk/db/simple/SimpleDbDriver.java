@@ -29,7 +29,7 @@ public class SimpleDbDriver {
     fileIterator.open();
     while (fileIterator.hasNext()) {
       Tuple tuple = fileIterator.next();
-      System.out.println(tuple);
+      System.out.print(tuple);
     }
 
     fileIterator.close();
