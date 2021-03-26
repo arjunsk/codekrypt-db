@@ -41,5 +41,5 @@ This is my effort to learn `component` forming a database, one at a time.
 ## DB Example
 Attempts of Developing DB from scratch.
 
-### SimpleDB
+### SimpleDB [TODO]
 1. [SimpleDB Github](https://github.com/iamxpy/SimpleDB)
