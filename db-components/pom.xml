@@ -15,6 +15,7 @@
     <module>jdbc</module>
     <module>file-system</module>
     <module>thread-local-random</module>
+    <module>cache-lru</module>
   </modules>
 
   <parent>

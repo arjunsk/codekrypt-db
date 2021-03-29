@@ -37,6 +37,13 @@ This is my effort to learn `component` forming a database, one at a time.
 1. [ANTLR SQLite](https://github.com/antlr/grammars-v4/tree/master/sql/sqlite)
 2. [Stackoverflow QA](https://stackoverflow.com/questions/49769147/parsing-mysql-using-antlr4-simple-example)
 
+### ThreadLocalRandom
+1. [JavaPoint](https://www.javatpoint.com/java-threadlocalrandom-nextlong-method)
+2. [Github](https://github.com/aws/aws-secretsmanager-caching-java/blob/ecf086b1c0cb019d28c9f507324ddbd1f91596d9/src/main/java/com/amazonaws/secretsmanager/caching/cache/SecretCacheItem.java#L106)
+
+### Cache LRU
+1. [Stackoverflow](https://stackoverflow.com/questions/27475797/use-linkedhashmap-to-implement-lru-cache)
+2. [Github](https://github.com/aws/aws-secretsmanager-caching-java/blob/master/src/main/java/com/amazonaws/secretsmanager/caching/cache/LRUCache.java)
 
 ## DB Example
 Attempts of Developing DB from scratch.
